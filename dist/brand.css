@@ -98,3 +98,14 @@ body.page-detail{animation:page-in .55s ease both}
   .pg-item{transition:none}.pg-item.is-waiting{clip-path:none;opacity:1}
   .scroll-progress{display:none}
 }
+
+/* WhatsApp contact pill (all pages) */
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:40;display:inline-flex;align-items:center;gap:10px;padding:12px 18px 12px 14px;border-radius:999px;background:var(--ink);color:#fff;font:500 13.5px/1 var(--sans);box-shadow:0 10px 30px #2b29293a;transition:opacity .4s ease,transform .5s var(--ease-out),background .25s}
+.wa-float svg{width:20px;height:20px;flex:none;color:#efa057;transition:transform .45s var(--ease-out)}
+.wa-float:hover{background:#1f1d1d;transform:translateY(-2px)}
+.wa-float:hover svg{transform:rotate(-8deg) scale(1.06)}
+.wa-float:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+body:not(.detail-page):not(.past-hero) .wa-float{opacity:0;pointer-events:none;transform:translateY(14px)}
+body.gallery-open .wa-float{opacity:0;pointer-events:none}
+@media(max-width:600px){.wa-float{right:14px;bottom:14px;padding:11px 15px 11px 12px;font-size:13px}}
+@media(prefers-reduced-motion:reduce){.wa-float,.wa-float svg{transition:none}}
